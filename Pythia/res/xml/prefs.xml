@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+            android:title="sensors preferences">
+
+            <SwitchPreference
+              	android:key="location_preference"
+                android:title="Location"
+                android:summary="Turn On/Off the sensor"
+                 />
+          
+			<SwitchPreference
+                android:key="accelerometer_preference"
+                android:title="Accelerometer"
+                android:summary="Turn On/Off the sensor"
+		    	/>
+			
+    </PreferenceCategory>
+
+</PreferenceScreen>
