@@ -1,16 +1,21 @@
 package il.ac.shenkar.pythia;
 
 import il.ac.shenkar.pythia.Observers.LocationObserver;
+import android.R.bool;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.IBinder;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceManager;
+import android.preference.SwitchPreference;
 import android.util.Log;
 
 
-public class ObserverService extends Service{
+public class ObserverService extends Service {
 	
 	private static final String TAG ="ObserverService";
 	
@@ -27,12 +32,10 @@ public class ObserverService extends Service{
 		//switch case Control which observers are functional..
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		prefs.registerOnSharedPreferenceChangeListener(listener);
-		/*if(newValue != null && preference != null && preference.getKey().equals("location_preference") && newValue.equals(true)) {
-			
+
+		if(prefs.getBoolean("location_preference", false)) {
+			locationOb = new LocationObserver(getApplicationContext());
 		}
-		if(newValue != null && preference != null && preference.getKey().equals("location_preference") && newValue.equals(false)) {
-			locationOb.stop();
-		}*/
 		
 		
 		return START_STICKY;
@@ -53,4 +56,5 @@ public class ObserverService extends Service{
 		}
 		
 	};
+
 }

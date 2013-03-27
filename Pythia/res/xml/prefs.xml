@@ -3,12 +3,13 @@
         xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory
-            android:title="sensors preferences">
+            android:title="Sensors Preferences">
 
             <SwitchPreference
               	android:key="location_preference"
                 android:title="Location"
                 android:summary="Turn On/Off the sensor"
+                android:defaultValue="false"
                  />
           
 			<SwitchPreference
@@ -18,5 +19,19 @@
 		    	/>
 			
     </PreferenceCategory>
+    
+        <PreferenceCategory
+            android:title="sync preferences">
 
+        <ListPreference
+                android:key="interval_pref"
+                android:title="Sync Interval"
+                android:summary="Sync Interval By seconds"
+                android:entries="@array/list"
+                android:entryValues="@array/l_values"
+                android:dialogTitle="Sync Interval" />
+
+    </PreferenceCategory>
+   
+    
 </PreferenceScreen>
