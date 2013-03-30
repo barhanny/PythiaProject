@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+	<PreferenceCategory
+	    android:title="Status">
+	    
+	    <Preference
+	        android:key="sync_status"
+	        android:title="Sync"
+	        android:summary="Tmp summary for sync" >
+	        
+	    </Preference>
+	        
+	    <Preference
+	        android:key="events_status"
+	        android:title="DataBase status"
+	        android:summary="Tmp summary for database" >
+	        
+	    </Preference>
+	    
+	</PreferenceCategory>    
+
+</PreferenceScreen>

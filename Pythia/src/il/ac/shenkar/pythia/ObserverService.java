@@ -45,16 +45,21 @@ public class ObserverService extends Service {
 
 		@Override
 		public void onSharedPreferenceChanged (SharedPreferences pref, String key) {
-			if(pref != null && pref.getBoolean("location_preference", false)) {
-				locationOb = new LocationObserver(getApplicationContext());	
-			} 
-			else if (pref != null && !pref.getBoolean("location_preference", false)) {
-				Log.i(TAG, "STOPPP");
-				locationOb.stop();
+			if(key.contentEquals("location_preference")) {
+				Boolean locOn = pref.getBoolean("location_preference", false);
+				if(locOn) {
+					locationOb = new LocationObserver(getApplicationContext());	
+				} 
+				if(!locOn) {
+					Log.i(TAG, "STOPPP");
+					locationOb.stop();
+				}
+			}
+			if(key.contentEquals("interval_pref")) {
+				Log.i(TAG, "THIS IS INTERVALL");
 			}
 			
 		}
 		
 	};
-
 }

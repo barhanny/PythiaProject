@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="list">
-        <item>1 (min)</item>
-        <item>5</item>
+        <item>1 (Min)</item>
+        <item>5(Defualt)</item>
         <item>10</item>
         <item>15</item>
         <item>20</item>
-        <item>25</item>
         
     </string-array>
     <string-array name="l_values">
